@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 const ItemPreview = (props) => {
   const item = props.item;
 
+
   const handleClick = (ev) => {
     ev.preventDefault();
     if (item.favorited) {
@@ -54,6 +55,7 @@ const ItemPreview = (props) => {
               className="user-pic rounded-circle pr-1"
             />
           </Link>
+          {item.seller.isVerified && (<div className=""><img alt="top seller badge" src="verified_seller.svg"/>TOP SELLER</div>)}
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
           </button>
