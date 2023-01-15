@@ -76,6 +76,7 @@ UserSchema.methods.toAuthJSON = function () {
   return {
     username: this.username,
     email: this.email,
+    isVerified: this.isVerified,
     token: this.generateJWT(),
     bio: this.bio,
     image: this.image,
